@@ -4,8 +4,13 @@ use App\Controllers\BaseController;
 
 class Blog extends BaseController
 {
-    public function single()
+    public function single($yazar=null)
     {
-        echo 'Hello World!';
+        echo "Blog tekil sayfası".'<br>';
+
+    }
+    public function category()
+    {
+        echo 'category';
     }
 }

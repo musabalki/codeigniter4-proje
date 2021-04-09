@@ -32,11 +32,34 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+
 $routes->get('/', 'Frontend\Home::index');
 $routes->get('/blog/single', 'Frontend\Blog::single');
+$routes->get('/blog/category', 'Frontend\Blog::category');
+
+
+$routes->get('/blog/single/(:any)', 'Frontend\Blog::single/$1');
+
+
+
+
+
 $routes->get('/admin/login', 'Backend\Auth::login');
 $routes->get('/admin/logout', 'Backend\Auth::logout');
 $routes->get('/admin/dashboard', 'Backend\Dashboard::index');
+
+
+
+
+/*
+$routes->get('/admin/dashboard', 'Backend\Dashboard::index');
+$routes->post('/admin/dashboard', 'Backend\Dashboard::index');
+$routes->put('/admin/dashboard', 'Backend\Dashboard::index');
+$routes->delete('/admin/dashboard', 'Backend\Dashboard::index');
+$routes->match(['get','post'],'/admin/dashboard', 'Backend\Dashboard::index');
+*/
+
 
 /*
  * --------------------------------------------------------------------
