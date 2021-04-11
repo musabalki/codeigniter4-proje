@@ -34,20 +34,27 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 
-$routes->get('/', 'Frontend\Home::index');
+$routes->get('/', 'Home::index',['namespace'=>'App\Controllers\Frontend']);
 $routes->get('/blog/single', 'Frontend\Blog::single');
 $routes->get('/blog/category', 'Frontend\Blog::category');
 
 
-$routes->get('/blog/single/(:any)', 'Frontend\Blog::single/$1');
+//$routes->get('/blog/single/(:any)/(:any)/(:any)/(:any)/', 'Frontend\Blog::single/$1/$2/$3/$4');
+
+$routes->group('admin',function($routes){
+	$routes->group('blog',function($routes2){
+		$routes2->get('insert/(:any)', 'Backend\Blog::insert/$1',['as'=>'admin_blog_insert']);
+		$routes2->get('get', 'Backend\Blog::get',['as'=>'get']);
+		$routes2->get('update', 'Backend\Blog::update');
+		$routes2->get('delete', 'Backend\Blog::delete');
+	});
+	$routes->get('login', 'Backend\Auth::login');
+	$routes->get('logout', 'Backend\Auth::logout');
+	$routes->get('dashboard', 'Backend\Dashboard::index');
+});
 
 
 
-
-
-$routes->get('/admin/login', 'Backend\Auth::login');
-$routes->get('/admin/logout', 'Backend\Auth::logout');
-$routes->get('/admin/dashboard', 'Backend\Dashboard::index');
 
 
 
