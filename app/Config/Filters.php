@@ -31,10 +31,12 @@ class Filters extends BaseConfig
 	 */
 	public $globals = [
 		'before' => [
+			//'myfilter' //tüm routerlerda before çaluşacak
 			// 'honeypot',
 			// 'csrf',
 		],
 		'after'  => [
+			//'myfilter',
 			'toolbar',
 			// 'honeypot',
 		],
@@ -60,5 +62,9 @@ class Filters extends BaseConfig
 	 *
 	 * @var array
 	 */
-	public $filters = [];
+	public $filters = [
+		
+	];
+	// 'myfilter'=>['before'=>['admin/login',],'after'=>['blog/*']]
+	// hangi filter hangi route çalışağı belirtildi
 }
