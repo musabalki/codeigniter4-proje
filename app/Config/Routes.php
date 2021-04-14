@@ -48,9 +48,11 @@ $routes->group('admin',function($routes){
 		$routes2->get('update', 'Backend\Blog::update');
 		$routes2->get('delete', 'Backend\Blog::delete');
 	});
-	$routes->get('login', 'Backend\Auth::login',['filter'=>'myfilter']);
+	$routes->get('login', 'Backend\Auth::login',['as'=>'admin_login','filter'=>'myfilter']);
 	$routes->get('logout', 'Backend\Auth::logout');
-	$routes->get('dashboard', 'Backend\Dashboard::index');
+	$routes->get('dashboard', 'Backend\Dashboard::index',[
+		'filter'=>'adminauth'
+	]);
 });
 
 

@@ -7,6 +7,7 @@ use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 use App\Filters\MyFilter;
+use App\Filters\AdminAuth;
 
 class Filters extends BaseConfig
 {
@@ -21,6 +22,7 @@ class Filters extends BaseConfig
 		'toolbar'  => DebugToolbar::class,
 		'honeypot' => Honeypot::class,
 		'myfilter' => MyFilter::class,
+		'adminauth' =>AdminAuth::class,
 	];
 
 	/**

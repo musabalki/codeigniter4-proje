@@ -6,6 +6,6 @@ class Dashboard extends BaseController
 {
     public function index()
     {
-        echo "Yönetici";
+        echo "<br>Dashboard index metodu çalıştı.";
     }
 }
