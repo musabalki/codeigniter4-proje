@@ -7,7 +7,14 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('home',
-		['baslik'=>'anasayfa','icerik'=>'Lorem ipsum']);
+		$data=[
+			'baslik'=>'anasayfa',
+			'icerik'=>'Lorem ipsum'
+		];
+		$cache=[
+			'cache'=>20,
+			'cache_name'=>'home_page_cache'
+		];
+		return view('home',$data,$cache);
 	}
 }
