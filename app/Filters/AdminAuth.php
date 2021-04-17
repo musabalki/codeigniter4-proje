@@ -10,15 +10,16 @@ class AdminAuth implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
+        /*echo "before";
         $adminGiris=false;
         if(!$adminGiris){
             return redirect('admin_login');
             
-        }
+        }*/
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        echo "after";
+       // echo "after";
     }
 }

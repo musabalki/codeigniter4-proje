@@ -34,6 +34,20 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 
+
+$routes->group('users',['filter'=>'adminauth'],function($routes){
+	$routes->get('listing','Backend\Users::listing',['as'=>'user_listing']);
+});
+
+
+
+
+
+
+
+
+
+
 $routes->get('/', 'Home::index',['namespace'=>'App\Controllers\Frontend']);
 $routes->get('/blog/single', 'Frontend\Blog::single');
 $routes->get('/blog/category', 'Frontend\Blog::category');
