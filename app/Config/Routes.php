@@ -49,6 +49,8 @@ $routes->group('users',['filter'=>'adminauth'],function($routes){
 
 
 $routes->get('/', 'Home::index',['namespace'=>'App\Controllers\Frontend']);
+$routes->get('/contact', 'Frontend\Home::contact');
+
 $routes->get('/blog/single', 'Frontend\Blog::single');
 $routes->get('/blog/category', 'Frontend\Blog::category');
 

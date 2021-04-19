@@ -17,4 +17,7 @@ class Home extends BaseController
 		];
 		return view('home',$data,$cache);
 	}
+	public function contact(){
+        return view('contact');
+    }
 }
