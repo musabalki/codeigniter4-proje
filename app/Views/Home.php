@@ -1,7 +1,8 @@
-<?= $this->extend('frontend/layouts/main') ?>
+<?php $this->extend('frontend/layouts/main') ?>
 
 <?= $this->section('content') ?>
-    <h1>HOME</h1>
+<?= $body ?>
+
 <?= $this->endsection() ?>
 
 
